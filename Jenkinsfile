@@ -1,28 +1,33 @@
-pipeline{
-	agent any
-	
-stages{
-	stage ('Compile') {
+pipeline {
+    agent any
 
+    stages {
+	
+		
+        
+		
+		        stage('deploy') {
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-              //      sh 'mvn clean package'
-                    sh 'mvn clean compile'
-                }
+				       bat 'gradlew clean deploy'
+					   bat 'echo "In cleanDeploy"'
+				   }
+				  }
+				  
+
+		
+		
+		
+		stage('installSchema') {
+            steps {
+			   
+			
+				//InstallSchema
+				bat './gradlew installSchema'
+				bat 'echo "In installSchema"'
+				
             }
         }
-	stage('SonarQube analysis') {
-      steps {
-        
-           withMaven(maven : 'maven_3_5_0') {
-        withSonarQubeEnv('sonar') {
-          sh 'mvn clean package sonar:sonar'
-        }
-      }
+		
+
     }
-           }
-	
 }
-}
-
-
