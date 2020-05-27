@@ -1,0 +1,45 @@
+repositories {
+        flatDir {
+        dirs "C:/Users/kiran_k12/Desktop/Enovia-Project/lib"
+    } 
+}
+
+apply plugin: 'java'
+
+sourceCompatibility = 8
+
+configurations { provided 
+localdeps 
+}
+
+sourceSets {
+    main.compileClasspath += configurations.provided
+    test.compileClasspath += configurations.provided
+    test.runtimeClasspath += configurations.provided
+}
+
+def webInfLib = new File(projectDir, "C:/Users/kiran_k12/Desktop/Enovia-Project/lib")
+
+dependencies{
+provided fileTree(dir: webInfLib, include: "*.jar")
+
+}
+
+apply plugin: 'eclipse'
+eclipse.classpath.plusConfigurations += [configurations.provided]
+
+jar {
+    from sourceSets.main.allJava
+}
+
+
+
+//Begin - Ignore Eclipse settings tasks. They will be kept in SCM
+cleanEclipseJdt {
+    enabled = false
+}
+
+eclipseJdt{
+    enabled = false
+}
+//End - Ignore Eclipse settings tasks
