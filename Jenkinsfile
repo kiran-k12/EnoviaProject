@@ -3,31 +3,22 @@ pipeline {
 
     stages {
 	
+		stage('Build') {
+	
+				steps {
+		                bat 'gradlew clean build'
+		              }
+	            }
+
 		
-        
-		
-		        stage('build') {
-            steps {
-				       bat 'gradlew clean build deploy'
-					   bat 'echo "In cleanDeploy"'
-				   }
+		        stage('Deploy') {
+				steps {
+				       bat 'gradlew deploy'
+				       bat 'echo "In cleanDeploy"'
+					  }
 				  }
-				  
-
+		 	
 		
-		
-		
-		stage('installSchema') {
-            steps {
-			   
-			
-				//InstallSchema
-				bat './gradlew installSchema'
-				bat 'echo "In installSchema"'
 				
-            }
-        }
-		
-
     }
 }
