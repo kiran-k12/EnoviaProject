@@ -6,7 +6,6 @@ repositories {
 
 apply plugin: 'java'
 
-sourceCompatibility = 11
 
 configurations { provided 
 localdeps 
