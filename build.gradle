@@ -22,7 +22,7 @@ sourceSets {
 def webInfLib = new File(projectDir, "C:/Users/kiran_k12/Desktop/Enovia-Project/lib")
 
 dependencies{
-provided fileTree(dir: webInfLib, include: "*.jar")
+compile fileTree(dir: webInfLib, include: "*.jar")
 
 }
 
