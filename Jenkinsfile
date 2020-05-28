@@ -10,16 +10,7 @@ pipeline {
 		              }
 	            }
 
-		stage('SonarQube analysis') {
-      steps {
-        
-           
-        withSonarQubeEnv('sonar') {
-          bat 'gradlew clean sonar:sonar'
-        
-      }
-    }
-           }
+
 		       				
     }
 }
