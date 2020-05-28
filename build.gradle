@@ -5,7 +5,8 @@ repositories {
 }
 
 apply plugin: 'java'
-apply plugin:'base'
+apply plugin: 'base'
+apply plugin: 'application'
 
 configurations { provided 
 localdeps 
