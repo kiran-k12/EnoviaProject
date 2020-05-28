@@ -8,7 +8,7 @@ pipeline {
 		
 		        stage('deploy') {
             steps {
-				       bat 'gradlew clean compile'
+				       bat 'gradlew clean deploy'
 					   bat 'echo "In cleanDeploy"'
 				   }
 				  }
