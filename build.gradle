@@ -30,7 +30,9 @@ eclipse.classpath.plusConfigurations += [configurations.provided]
 jar {
     from sourceSets.main.allJava
 }
-
+release {
+    buildTasks = ['buildWar']
+}
 
 
 //Begin - Ignore Eclipse settings tasks. They will be kept in SCM
