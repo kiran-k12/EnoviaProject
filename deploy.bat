@@ -1,0 +1,1 @@
+bat gradlew deploy --parallel --daemon --build-cache
