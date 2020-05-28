@@ -1,1 +1,0 @@
-./gradlew deploy --parallel --daemon --build-cache
