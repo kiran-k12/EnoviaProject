@@ -15,7 +15,7 @@ pipeline {
         
            
         withSonarQubeEnv('sonar') {
-          bat 'gradlew clean package sonar:sonar'
+          bat 'gradlew clean sonar:sonar'
         
       }
     }
