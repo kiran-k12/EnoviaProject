@@ -14,7 +14,7 @@ sourceSets {
     test.runtimeClasspath += configurations.provided
 }
 
-def webInfLib = new File(projectDir, "C:/Users/kiran_k12/Desktop/Enovia-Project/lib")
+def webInfLib = new File(projectDir, "C:\Users\kiran_k12\Desktop\Enovia-Project\lib")
 
 dependencies{
 compile fileTree(dir: webInfLib, include: "*.jar")
