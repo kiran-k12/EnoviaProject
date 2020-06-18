@@ -14,12 +14,6 @@ sourceSets {
     test.runtimeClasspath += configurations.provided
 }
 
-repositories {
-   flatDir {
-       dirs 'libs'
-   }
-}
-
 
 def libs = new File(projectDir, "C:/Users/kiran_k12/Desktop/Enovia-Project/lib")
 
